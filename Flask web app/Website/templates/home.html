@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %}
+{% block content %}
+
+<ul class="list-group list-group-flush" id="notes">
+    {% for Upload in user.Upload %}
+    <li class="list-group-item">
+      {{ Upload.remarks }}
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </li>
+    {% endfor %}
+  </ul>
+  <form method="POST">
+    <textarea name="remarks" id="remarks" class="form-control"></textarea>
+    <br />
+    <div align="center">
+      <button type="submit" class="btn btn-primary">Add Remarks</button>
+    </div>
+  </form>
+
+
+{% endblock %}
